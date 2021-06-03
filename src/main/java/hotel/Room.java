@@ -10,26 +10,25 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name="rooms")
+@Table(name = "rooms")
 public class Room {
 
     @Id
-    @Column(name = "id", nullable = false, length = 300)
-    @Type(type = "BIGINT")
+    @Column(name = "id", columnDefinition = "BIGINT", nullable = false, length = 300)
     private long id;
 
-    @Column(name = "roomNumber", nullable = false, length = 200)
-    @Type(type = "BIGINT")
+    @Column(name = "roomNumber", columnDefinition = "BIGINT", nullable = false, length = 200)
     private long roomNumber;
 
-    @Column(name = "guestsNumber", nullable = false, length = 200)
-    @Type(type = "BIGINT")
+    @Column(name = "guestsNumber", columnDefinition = "BIGINT", nullable = false, length = 200)
     private long guestsNumber;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "category", columnDefinition = "VARCHAR", nullable = false, length = 30)
     private RoomCategory category;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "price", columnDefinition = "DECIMAL", nullable = false, length = 30)
     private RoomStatus status;
 
     private double price;

@@ -10,30 +10,28 @@ import java.security.Timestamp;
 @Getter
 @Setter
 @Entity
-@Table(name="reservations")
+@Table(name = "reservations")
 public class Reservation {
 
     @Id
-    @Column(name = "id", nullable = false, length = 300)
-    @Type(type = "BIGINT")
+    @Column(name = "id", columnDefinition = "BIGINT", nullable = false, length = 300)
     private long id;
 
-    @Column(name = "roomId", nullable = false, length = 200)
-    @Type(type = "BIGINT")
+    @Column(name = "roomId", columnDefinition = "BIGINT", nullable = false, length = 200)
     private long roomId;
 
-    @Column(name = "userId", nullable = false, length = 30)
-    @Type(type = "BIGINT")
+    @Column(name = "userId", columnDefinition = "BIGINT", nullable = false, length = 30)
     private long userId;
 
-    @Column(name = "price", nullable = false, length = 30)
-    @Type(type = "DECIMAL")
+    @Column(name = "price", columnDefinition = "DECIMAL", nullable = false, length = 30)
     private double price;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status", columnDefinition = "VARCHAR", nullable = false, length = 30)
     private ReservationStatus status;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "start_date", columnDefinition = "VARCHAR", nullable = false, length = 30)
     private Timestamp startDate;
 
     public Reservation(

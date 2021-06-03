@@ -10,31 +10,32 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
 
     @Id
-    @Column(name = "id", nullable = false, length = 50)
+    @Column(name = "id", columnDefinition = "BIGINT", nullable = false, length = 50)
     @Type(type = "BIGINT")
     private long id;
 
-    @Column(name = "phone", nullable = false, length = 10)
+    @Column(name = "phone", columnDefinition = "VARCHAR", nullable = false, length = 20)
     @Type(type = "VARCHAR")
     private String phone;
 
-    @Column(name = "password", nullable = false, length = 50)
+    @Column(name = "password", columnDefinition = "VARCHAR", nullable = false, length = 50)
     @Type(type = "VARCHAR")
     private String password;
 
-    @Column(name = "firstName", nullable = false, length = 30)
+    @Column(name = "firstName", columnDefinition = "VARCHAR", nullable = false, length = 30)
     @Type(type = "VARCHAR")
     private String firstName;
 
-    @Column(name = "lastName", nullable = false, length = 30)
+    @Column(name = "lastName", columnDefinition = "VARCHAR", nullable = false, length = 30)
     @Type(type = "VARCHAR")
     private String lastName;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "role", columnDefinition = "VARCHAR", nullable = false, length = 30)
     private UserRole role;
 
     public User(
