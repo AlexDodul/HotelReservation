@@ -1,4 +1,4 @@
-Url
-H2.driver
-Username
+Url: jdbc:h2:~/test
+H2.driver: org.h2.Driver
+Username: sa
 login of future db
